@@ -1,5 +1,6 @@
 
 
+
 # Integrata
 
 > 🚀 **Integrata** — A growing Fortran project demonstrating numerical integration using Simpson’s Rule, with plans to expand into a full suite of numerical methods and scientific computing tools.  
@@ -9,14 +10,16 @@
 
 ## 📂 Project Structure
 
+```text
 Integrata/
 ├── src/
-│   └── simpson.f90 # Simpson’s Rule integration module
+│   └── simpson.f90       # Simpson’s Rule integration module
 ├── app/
-│   └── main.f90 # Main program using the simpson module
+│   └── main.f90          # Main program using the simpson module
 ├── test/
-│   └── test_simpson.f90 # Test program for the simpson module
-└── README.md # This file
+│   └── test_simpson.f90  # Test program for the simpson module
+└── README.md             # This file
+```
 
 ---
 
@@ -24,20 +27,19 @@ Integrata/
 
 ### Prerequisites
 
-- **Fortran compiler:**  
-	[gfortran](https://gcc.gnu.org/fortran/) or any Fortran 2008+ compliant compiler.
+- **Fortran compiler:** [gfortran](https://gcc.gnu.org/fortran/) or any Fortran 2008+ compliant compiler.
 
 ---
 
 ### Build the main program
 
-```bash
+```sh
 gfortran -o main.exe app/main.f90 src/simpson.f90
 ```
 
 ### Run the main program
 
-```bash
+```sh
 ./main.exe
 ```
 
@@ -50,7 +52,7 @@ Result = 2.00000000
 
 ### Build and run tests
 
-```bash
+```sh
 gfortran -o test_simpson.exe test/test_simpson.f90 src/simpson.f90
 ./test_simpson.exe
 ```
@@ -59,7 +61,7 @@ gfortran -o test_simpson.exe test/test_simpson.f90 src/simpson.f90
 
 ## 🧮 About Simpson’s Rule Integration
 
-Simpson’s Rule approximates the definite integral of a function f(x) on [a,b] by dividing the interval into an even number n of subintervals and fitting parabolas through the points.
+Simpson’s Rule approximates the definite integral of a function f(x) on [a, b] by dividing the interval into an even number n of subintervals and fitting parabolas through the points.
 
 **Formula:**
 
@@ -69,7 +71,7 @@ where h = (b - a) / n.
 
 **Visualization of intervals:**
 
-```
+```text
 a  x1  x2  x3  x4  ...  xn-1  b
 |---|---|---|---|-------|---|
 	 ^   ^   ^           ^   
@@ -84,12 +86,12 @@ The number of subintervals n must be even for Simpson’s Rule to work correctly
 
 ## 🧩 Future plans for Integrata
 
-| Feature                    | Status     | Notes                        |
-|----------------------------|------------|------------------------------|
-| Add other numerical methods| Planned    | Trapezoidal, Romberg, etc.   |
-| Support adaptive integration| Planned   | Dynamic subinterval sizing    |
-| GUI frontend               | Idea       | Simple Qt or web UI           |
-| FPM package support        | In progress| For easy building & testing   |
+| Feature                     | Status      | Notes                        |
+|-----------------------------|------------|------------------------------|
+| Add other numerical methods | Planned    | Trapezoidal, Romberg, etc.   |
+| Support adaptive integration| Planned    | Dynamic subinterval sizing    |
+| GUI frontend                | Idea       | Simple Qt or web UI           |
+| FPM package support         | In progress| For easy building & testing   |
 
 ---
 
