@@ -1,3 +1,6 @@
+! test_simpson.f90 is now superseded by test_integration.f90
+! Run test_integration.f90 for comprehensive tests of both Simpson's and Trapezoidal rules.
+
 program test_simpson
   use simpson_module
   implicit none

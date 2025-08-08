@@ -23,7 +23,8 @@ Integrata/
 ├── app/
 │   └── main.f90            # Main program using the modules
 ├── test/
-│   └── test_simpson.f90    # Test program for the simpson module
+│   ├── test_simpson.f90    # Legacy test for Simpson's Rule
+│   └── test_integration.f90 # Comprehensive tests for Simpson's & Trapezoidal rules
 ├── Makefile                # Build and run automation
 └── README.md               # This file
 ```
@@ -46,10 +47,13 @@ make        # builds the main program (main.exe)
 make run    # builds and runs the main program
 ```
 
+
 ### Build and run tests
 
 ```sh
-make test   # builds and runs the test program
+make test   # builds and runs all tests (Simpson's & Trapezoidal)
+make test_simpson      # legacy test for Simpson's Rule only
+make test_integration  # comprehensive tests for both rules
 ```
 
 ---
@@ -119,7 +123,8 @@ a  x1  x2  x3  x4  ...  xn-1  b
 - **src/menu.f90**: Menu and selection utilities for user interaction
 - **src/integrata.f90**: Unified interface module, re-exports all integration methods
 - **app/main.f90**: Main program, orchestrates user input, method selection, and output
-- **test/test_simpson.f90**: Test program for Simpson’s Rule
+- **test/test_simpson.f90**: Legacy test for Simpson’s Rule
+- **test/test_integration.f90**: Comprehensive tests for Simpson’s & Trapezoidal rules
 
 ### Usage
 
