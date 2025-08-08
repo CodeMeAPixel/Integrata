@@ -1,0 +1,17 @@
+# Fortran build artifacts
+*.o
+*.mod
+*.exe
+*.out
+*.obj
+*.dll
+*.a
+*.so
+*.dylib
+build/
+# Editor files
+*.swp
+*~
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install gfortran
+        run: sudo apt-get update && sudo apt-get install -y gfortran
+      - name: Build main
+        run: gfortran -o main.exe app/main.f90 src/simpson.f90
+      - name: Run main
+        run: ./main.exe
+      - name: Build test
+        run: gfortran -o test_simpson.exe test/test_simpson.f90 src/simpson.f90
+      - name: Run test
+        run: ./test_simpson.exe
