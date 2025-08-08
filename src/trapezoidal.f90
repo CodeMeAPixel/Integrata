@@ -1,31 +1,28 @@
-!============================================================
-! Module: simpson_module
+!==========================================================
+! Module: trapezoidal_module
 !
 ! Provides a function to numerically approximate the definite
 ! integral of a given real-valued function f over an interval
-! [a, b] using Simpson's rule with n subdivisions.
+! [a, b] using the trapezoidal rule with n subdivisions.
 !
-! The simpson_integral function takes:
+! The trapezoidal_rule function takes:
 ! - f : a real function of one variable (x)
 ! - a : lower limit of integration
 ! - b : upper limit of integration
-! - n : number of subdivisions (must be even)
+! - n : number of subdivisions (must be >= 1)
 !
 ! Returns the approximate integral value as a real number.
-!============================================================
-module simpson_module
+!==========================================================
+module trapezoidal_module
   implicit none
-
   abstract interface
     function func_interface(x) result(y)
       real, intent(in) :: x
       real :: y
     end function func_interface
   end interface
-
 contains
-
-  function simpson_integral(f, a, b, n) result(integral)
+  function trapezoidal_rule(f, a, b, n) result(integral)
     implicit none
     procedure(func_interface) :: f
     real, intent(in) :: a, b
@@ -33,24 +30,16 @@ contains
     real :: integral
     real :: h, x
     integer :: i
-
-    if (mod(n, 2) /= 0) then
-      print *, "Error: n must be even."
+    if (n < 1) then
+      print *, "Error: n must be >= 1."
       stop 1
     end if
-
     h = (b - a) / real(n)
-    integral = f(a) + f(b)
+    integral = 0.5 * (f(a) + f(b))
     do i = 1, n - 1
       x = a + i * h
-      if (mod(i, 2) == 0) then
-        integral = integral + 2.0 * f(x)
-      else
-        integral = integral + 4.0 * f(x)
-      end if
+      integral = integral + f(x)
     end do
-    integral = integral * h / 3.0
-  end function simpson_integral
-
-
-end module simpson_module
+    integral = integral * h
+  end function trapezoidal_rule
+end module trapezoidal_module

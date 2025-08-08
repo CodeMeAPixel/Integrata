@@ -5,13 +5,6 @@ program test_simpson
   integer :: n
   real, parameter :: tol = 1.0e-6
 
-  interface
-    function f_sin(x) result(y)
-      real, intent(in) :: x
-      real :: y
-    end function f_sin
-  end interface
-
   a = 0.0
   b = 3.14159265358979323846
   n = 100

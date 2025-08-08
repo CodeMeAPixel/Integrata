@@ -1,10 +1,10 @@
 # TODO - Future Expansion Plans
 
 ## 🚀 Immediate Next Steps
-- [ ] Add Trapezoidal Rule integration function  
-- [ ] Extend `main.f90` to allow user to select integration method  
-- [ ] Add support for more predefined test functions (e.g., cos(x), exp(x))  
-- [ ] Implement input validation for user inputs (bounds, n)  
+- [x] Add Trapezoidal Rule integration function  
+- [x] Extend `main.f90` to allow user to select integration method  
+- [x] Add support for more predefined test functions (e.g., cos(x), exp(x))  
+- [x] Implement input validation for user inputs (bounds, n)
 
 ## 🧪 Testing
 - [ ] Write automated unit tests using `fpm test` or other framework  
@@ -28,7 +28,6 @@
 - [ ] Create a shared library for calling from other languages  
 - [ ] Benchmark performance vs Python/NumPy equivalents  
 
-## 🎨 Documentation
-- [ ] Write detailed README with usage examples  
+- [x] Write detailed README with usage examples
 - [ ] Add inline code documentation/comments  
 - [ ] Create example Jupyter notebooks with usage demos  
